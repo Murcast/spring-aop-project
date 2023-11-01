@@ -15,11 +15,11 @@ public class DemoLoggingAspect {
     @Before("com.murcast.springaopproject.aspect.BaseAspects.forDaoPackageNoGetterSetter()")
     public void beforeAddAccountAdvice(JoinPoint theJoinPoint) {
         System.out.println("\n========>>> Executing @Before advice on method");
-        System.out.println("Signature: " + theJoinPoint.getSignature());
+        System.out.println("Method Signature: " + theJoinPoint.getSignature());
         for (Object o : theJoinPoint.getArgs()) {
             if (o instanceof DataToPass data) {
-                System.out.println("Title: " + data.getTitle());
-                System.out.println("Size: " + data.getSize());
+                System.out.println("DataToPass Title: " + data.getTitle());
+                System.out.println("DataToPass Size: " + data.getSize());
             }
         }
     }
