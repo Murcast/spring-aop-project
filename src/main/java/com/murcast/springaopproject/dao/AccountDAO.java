@@ -4,6 +4,8 @@ import com.murcast.springaopproject.dto.DataToPass;
 import com.murcast.springaopproject.entity.Account;
 import com.murcast.springaopproject.entity.SubAccount;
 
+import java.util.List;
+
 public interface AccountDAO {
 
     String getServiceField();
@@ -19,4 +21,6 @@ public interface AccountDAO {
     void addSubAccount(SubAccount subAccount);
 
     void methodWithTwoParameters(String name, DataToPass data);
+
+    List<Account> findAccounts();
 }

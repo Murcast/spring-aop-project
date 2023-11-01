@@ -22,12 +22,13 @@ public class SpringAopProjectApplication {
 		return runner -> {
 			demoTheBeforeAdvice(accountDAO);
 			demoTheMembershipAdvise(membershipDAO);
-			accountDAO.addAccount(new Account());
+			accountDAO.addAccount(new Account("knowname"));
 			accountDAO.addObject(new Object());
 			accountDAO.addSubAccount(new SubAccount());
 			accountDAO.setServiceField("default value");
 			accountDAO.getServiceField();
 			accountDAO.methodWithTwoParameters("elegant name", new DataToPass("data title", 42));
+			accountDAO.findAccounts();
 		};
 	}
 

@@ -5,6 +5,10 @@ import com.murcast.springaopproject.entity.Account;
 import com.murcast.springaopproject.entity.SubAccount;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Stream;
+
 @Repository
 public class AccountDAOImpl implements AccountDAO {
 
@@ -26,14 +30,17 @@ public class AccountDAOImpl implements AccountDAO {
     public void addAccount() {
         System.out.println(getClass() + ": DOING MY DB WORK: ADDING AN ACCOUNT");
     }
+
     @Override
     public void addAccount(Account account) {
         System.out.println(getClass() + ": DOING MY DB WORK: ADDING AN ACCOUNT AS A PARAMETER");
     }
+
     @Override
     public void addObject(Object obj) {
         System.out.println(getClass() + ": DOING MY DB WORK: ADDING AN OBJECT AS A PARAMETER");
     }
+
     @Override
     public void addSubAccount(SubAccount subAccount) {
         System.out.println(getClass() + ": DOING MY DB WORK: ADDING AN SUBACCOUNT AS A PARAMETER");
@@ -42,5 +49,15 @@ public class AccountDAOImpl implements AccountDAO {
     @Override
     public void methodWithTwoParameters(String name, DataToPass data) {
         System.out.printf("%s: name - %s, data - %s", getClass(), name, data);
+    }
+
+    @Override
+    public List<Account> findAccounts() {
+        return List.of(
+                new Account("Ira"),
+                new Account("Aleksei"),
+                new Account("Olya"),
+                new Account("Maks")
+        );
     }
 }
