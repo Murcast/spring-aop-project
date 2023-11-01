@@ -19,7 +19,7 @@ public class AfterReturningAspect {
             returning = "result"
     )
     public void afterReturningPointcut(JoinPoint theJoinPoint, List<Account> result) {
-        System.out.println("========>>> Performing AfterReturning execution");
+        System.out.println("\n========>>> Performing AfterReturning execution");
         System.out.println("Original list: " + result.toString());
         result.get(1).setName(result.get(1).getName().toUpperCase());
         System.out.println("Resulting list: " + result);

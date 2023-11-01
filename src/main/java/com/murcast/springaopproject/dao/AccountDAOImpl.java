@@ -6,8 +6,6 @@ import com.murcast.springaopproject.entity.SubAccount;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.UUID;
-import java.util.stream.Stream;
 
 @Repository
 public class AccountDAOImpl implements AccountDAO {
@@ -59,5 +57,13 @@ public class AccountDAOImpl implements AccountDAO {
                 new Account("Olya"),
                 new Account("Maks")
         );
+    }
+
+    @Override
+    public List<Account> findAccounts(Integer id) {
+        if (id == null) {
+            throw new NullPointerException();
+        }
+        return List.of(new Account("empty list"));
     }
 }

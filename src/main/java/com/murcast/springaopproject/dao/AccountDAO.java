@@ -23,4 +23,6 @@ public interface AccountDAO {
     void methodWithTwoParameters(String name, DataToPass data);
 
     List<Account> findAccounts();
+
+    List<Account> findAccounts(Integer id);
 }

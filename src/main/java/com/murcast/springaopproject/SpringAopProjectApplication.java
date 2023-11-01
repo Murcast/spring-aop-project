@@ -29,6 +29,11 @@ public class SpringAopProjectApplication {
 			accountDAO.getServiceField();
 			accountDAO.methodWithTwoParameters("elegant name", new DataToPass("data title", 42));
 			accountDAO.findAccounts();
+			try {
+				accountDAO.findAccounts(null);
+			} catch (Exception e) {
+				System.out.println("we are fine");
+			}
 		};
 	}
 
