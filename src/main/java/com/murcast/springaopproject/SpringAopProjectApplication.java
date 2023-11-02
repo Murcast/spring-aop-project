@@ -5,6 +5,7 @@ import com.murcast.springaopproject.dao.MembershipDAO;
 import com.murcast.springaopproject.dto.DataToPass;
 import com.murcast.springaopproject.entity.Account;
 import com.murcast.springaopproject.entity.SubAccount;
+import com.murcast.springaopproject.service.TrafficFortuneService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,22 +19,23 @@ public class SpringAopProjectApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(AccountDAO accountDAO, MembershipDAO membershipDAO) {
+	public CommandLineRunner commandLineRunner(AccountDAO accountDAO, MembershipDAO membershipDAO, TrafficFortuneService tfs) {
 		return runner -> {
-			demoTheBeforeAdvice(accountDAO);
-			demoTheMembershipAdvise(membershipDAO);
-			accountDAO.addAccount(new Account("knowname"));
-			accountDAO.addObject(new Object());
-			accountDAO.addSubAccount(new SubAccount());
-			accountDAO.setServiceField("default value");
-			accountDAO.getServiceField();
-			accountDAO.methodWithTwoParameters("elegant name", new DataToPass("data title", 42));
-			accountDAO.findAccounts();
-			try {
-				accountDAO.findAccounts(null);
-			} catch (Exception e) {
-				System.out.println("we are fine");
-			}
+//			demoTheBeforeAdvice(accountDAO);
+//			demoTheMembershipAdvise(membershipDAO);
+//			accountDAO.addAccount(new Account("knowname"));
+//			accountDAO.addObject(new Object());
+//			accountDAO.addSubAccount(new SubAccount());
+//			accountDAO.setServiceField("default value");
+//			accountDAO.getServiceField();
+//			accountDAO.methodWithTwoParameters("elegant name", new DataToPass("data title", 42));
+//			accountDAO.findAccounts();
+//			try {
+//				accountDAO.findAccounts(null);
+//			} catch (Exception e) {
+//				System.out.println("we are fine");
+//			}
+			System.out.println(tfs.getFortune(false));
 		};
 	}
 
