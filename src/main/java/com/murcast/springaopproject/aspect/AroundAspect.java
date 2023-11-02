@@ -20,7 +20,7 @@ public class AroundAspect {
             result = pjp.proceed();
         } catch (Throwable e) {
             System.out.println("@Around advice: We have a problem: " + e);
-            result = "Nothing exciting here. Move along!";
+            throw new RuntimeException(e);
         }
         var end = System.currentTimeMillis();
         var duration = end - start;
